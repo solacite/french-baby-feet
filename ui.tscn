@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cquq6pa7acn78"]
+
+[ext_resource type="Script" uid="uid://blqtljwahyrms" path="res://ui.gd" id="1_m6e0p"]
+[ext_resource type="PackedScene" uid="uid://cm8ibso66x2ge" path="res://im_node.tscn" id="2_27fn8"]
+
+[node name="UI" type="Control" unique_id=1848782866 groups=["UI"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m6e0p")
+
+[node name="Main" parent="." unique_id=18269128 instance=ExtResource("2_27fn8")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main" unique_id=895772333]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 88.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VSeparator3" type="VSeparator" parent="Main/HBoxContainer" unique_id=488341721]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="P1Score" type="Label" parent="Main/HBoxContainer" unique_id=1458414716]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="VSeparator" type="VSeparator" parent="Main/HBoxContainer" unique_id=2037359944]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="P2Score" type="Label" parent="Main/HBoxContainer" unique_id=1389530676]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="VSeparator2" type="VSeparator" parent="Main/HBoxContainer" unique_id=832358716]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
