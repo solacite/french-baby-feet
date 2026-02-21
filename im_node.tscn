@@ -230,10 +230,9 @@ shape = SubResource("BoxShape3D_cljgw")
 [node name="P1" type="Node3D" parent="." unique_id=1006135382]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -7)
 script = ExtResource("2_qhmma")
-rotate_speed = 10
 
 [node name="Backline" type="AnimatableBody3D" parent="P1" unique_id=873844556]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+transform = Transform3D(1, 0, 0, 0, 0.38421476, 0.92324376, 0, -0.92324376, 0.38421476, 0, 0, 5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="P1/Backline" unique_id=882439263]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -306,7 +305,6 @@ shape = SubResource("CapsuleShape3D_qhmma")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -13.022459)
 script = ExtResource("2_qhmma")
 backwards = -1
-rotate_speed = 10
 player_num = 2
 
 [node name="Backline" type="AnimatableBody3D" parent="P2" unique_id=1352546399]

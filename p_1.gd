@@ -1,8 +1,8 @@
 extends Node3D
 
 @export var backwards = 1
-@export var rotate_speed = 5
-@export var move_speed = 5
+@export var rotate_speed = 15
+@export var move_speed = 15
 @export var player_num = 1
 
 
@@ -11,6 +11,12 @@ extends Node3D
 
 var rotate_string = "0"
 var moving_string = "1"
+
+var current_side = "right" # can be "left"
+var target_rotations_dict = {
+	"right": -67,
+	"left": 67,
+}
 
 	# for some really dumb reason, Godot's AnimatableStaticBodies can't move and rotate and the same frame
 	# so I'm switching off each frame
@@ -24,17 +30,20 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 
 	if dumb_fix == 0:
-		# rotating
-		var direction = 0
+		# define the current side
+		
 		if Input.is_action_pressed(rotate_string):
-			direction = 1
+			current_side = "left"
 		else:
-			direction = -1
+			current_side = "right"
 		
-		var temp = rotate_speed * delta * direction * backwards
-		
-		backline.rotate(Vector3(1,0,0), temp)
-		frontline.rotate(Vector3(1,0,0), temp)
+		# rotating
+	
+		var target_rotation = target_rotations_dict[current_side]
+		var target_rad = deg_to_rad(target_rotation)
+		var new_rot = lerp_angle(backline.rotation.x, target_rad, rotate_speed * delta)
+		backline.rotation.x = new_rot
+		frontline.rotation.x = new_rot
 		
 		#backline.rotation.x += rotate_speed * delta * direction * backwards
 		#frontline.rotation.x = backline.rotation.x
