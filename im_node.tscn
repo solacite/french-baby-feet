@@ -5,7 +5,10 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_droyi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_curve = 0.04948155
+sky_energy_multiplier = 0.5
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_energy_multiplier = 0.24
 
 [sub_resource type="Sky" id="Sky_0u07d"]
 sky_material = SubResource("ProceduralSkyMaterial_droyi")
@@ -90,11 +93,13 @@ size = Vector3(15, 10, 1)
 
 [node name="Main" type="Node3D" unique_id=18269128 groups=["Main"]]
 script = ExtResource("1_m7ivn")
-cam_rotate_speed = 0.3
+cam_rotate_speed = 0.1
 ball_impulse = 2.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1444006833]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_energy = 0.0
+light_negative = true
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1893751305]
@@ -307,6 +312,18 @@ shape = SubResource("CapsuleShape3D_m7ivn")
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, -0.02245903)
 shape = SubResource("CapsuleShape3D_qhmma")
 
+[node name="BackLight" type="SpotLight3D" parent="P1" unique_id=1717956783]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5, 6)
+light_energy = 7.5
+spot_range = 15.116313
+spot_angle = 41.749172
+
+[node name="FrontLight" type="SpotLight3D" parent="P1" unique_id=1499358957]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5, -5)
+light_energy = 7.588
+spot_range = 15.116313
+spot_angle = 41.749172
+
 [node name="P2" type="Node3D" parent="." unique_id=1683102542]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -13.022459)
 script = ExtResource("2_qhmma")
@@ -383,6 +400,18 @@ shape = SubResource("CapsuleShape3D_m7ivn")
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_qhmma")
 
+[node name="BackLight" type="SpotLight3D" parent="P2" unique_id=2063503878]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5, 6)
+light_energy = 7.588
+spot_range = 15.116313
+spot_angle = 41.749172
+
+[node name="FrontLight" type="SpotLight3D" parent="P2" unique_id=1656368888]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5, -5)
+light_energy = 7.588
+spot_range = 15.116313
+spot_angle = 41.749172
+
 [node name="P1Goal" type="Area3D" parent="." unique_id=544395576]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
 collision_layer = 0
@@ -399,11 +428,17 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="P2Goal" unique_id=1377108957]
 shape = SubResource("BoxShape3D_mibtd")
 
-[node name="CameraPivot" type="Node3D" parent="." unique_id=1909390862]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -10)
+[node name="Cameras" type="Node3D" parent="." unique_id=790252724]
 
-[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=825117622]
+[node name="CameraPivot" type="Node3D" parent="Cameras" unique_id=1909390862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="CameraPivotCamera" type="Camera3D" parent="Cameras/CameraPivot" unique_id=825117622]
 transform = Transform3D(-0.074104905, 0.6235819, -0.7782378, 0, 0.7803835, 0.6253012, 0.99725044, 0.046337884, -0.057830248, -13.935639, 10.437468, -0.22549248)
+
+[node name="FollowBallCam" type="Camera3D" parent="Cameras" unique_id=1684330770]
+transform = Transform3D(-4.371139e-08, 0.57357645, -0.81915206, 0, 0.81915206, 0.57357645, 1, 2.5071824e-08, -3.5806274e-08, -6.757, 5, -10)
+current = true
 
 [connection signal="body_entered" from="P1Goal" to="." method="_on_p_1_goal_body_entered"]
 [connection signal="body_entered" from="P2Goal" to="." method="_on_p_2_goal_body_entered"]
