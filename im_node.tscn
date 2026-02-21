@@ -28,7 +28,7 @@ size = Vector3(1.1004333, 3.2666016, 4.7935333)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m7ivn"]
 radius = 1.0449219
-height = 3.6425781
+height = 4.5266724
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qhmma"]
 radius = 0.2
@@ -143,7 +143,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 0)
 shape = SubResource("CapsuleShape3D_m7ivn")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="P1/Backline" unique_id=1992424663]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.45000005, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.50746465, 0)
 shape = SubResource("CapsuleShape3D_m7ivn")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="P1/Backline" unique_id=593765390]
@@ -179,6 +179,14 @@ shape = SubResource("CapsuleShape3D_m7ivn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 0)
 shape = SubResource("CapsuleShape3D_m7ivn")
 
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="P1/Frontline" unique_id=2107402527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0942874, -0.5382569, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="P1/Frontline" unique_id=910222882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0942874, -0.45000005, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="P1/Frontline" unique_id=1869313603]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.45000005, 0)
 shape = SubResource("CapsuleShape3D_m7ivn")
@@ -212,7 +220,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.9202805)
 transform = Transform3D(-2.1855695e-07, 0, 5, -5.9604645e-07, 5.000001, 0, -5.000001, -5.9604645e-07, -2.1855695e-07, -0.19543457, -0.011341453, -0.031161308)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="P2/Backline" unique_id=537680303]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.45, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.64946294, 0)
 shape = SubResource("CapsuleShape3D_m7ivn")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="P2/Backline" unique_id=1767650960]
@@ -250,7 +258,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.43242192, 0)
 shape = SubResource("CapsuleShape3D_m7ivn")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="P2/Frontline" unique_id=1397997768]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.45000005, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.54686284, 0)
 shape = SubResource("CapsuleShape3D_m7ivn")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="P2/Frontline" unique_id=1041214515]
@@ -297,7 +305,7 @@ transform = Transform3D(0.9635418, 0, -0.2675579, 0, 1, 0, 0.2675579, 0, 0.96354
 [node name="FollowPoint" type="Node3D" parent="Cameras" unique_id=1839034933]
 
 [node name="FollowBallCam" type="Camera3D" parent="Cameras/FollowPoint" unique_id=1684330770]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, -5)
+transform = Transform3D(0.12496808, 0.5553044, -0.8222044, 0, 0.8287007, 0.559692, 0.99216086, -0.069943614, 0.10356112, -20.996355, 16.595993, -3.5651639)
 current = true
 
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=1031884943]
