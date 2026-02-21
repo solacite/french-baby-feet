@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var backwards = 1
-@export var rotate_speed = 15
+@export var rotate_speed = 20
 @export var move_speed = 15
 @export var player_num = 1
 
@@ -26,6 +26,10 @@ func _ready() -> void:
 	if player_num == 2:
 		rotate_string = "2"
 		moving_string = "3"
+		target_rotations_dict = {
+			"right": 67,
+			"left": -67,
+		}
 
 func _physics_process(delta: float) -> void:
 
@@ -59,8 +63,6 @@ func _physics_process(delta: float) -> void:
 		
 		var temp_move = clamp(backline.position.x + moving * delta * move_speed * backwards, -1, 1)
 		
-		#backline.set_deferred("position.x", temp_move)
-		#frontline.set_deferred("position.x", temp_move)
-		backline.position.x = clamp(backline.position.x + moving * delta * move_speed * backwards, -1, 1) 
+		backline.position.x = temp_move
 		frontline.position.x = backline.position.x
 		dumb_fix = 0

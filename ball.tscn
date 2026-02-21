@@ -1,17 +1,95 @@
 [gd_scene format=3 uid="uid://bbswd1qjburcp"]
 
+[ext_resource type="Script" uid="uid://drh7jhgp2t1sb" path="res://ball.gd" id="1_x8fbi"]
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbx31"]
 friction = 0.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8fbi"]
+albedo_color = Color(1, 1, 1, 0)
+
 [sub_resource type="SphereMesh" id="SphereMesh_cbx31"]
+material = SubResource("StandardMaterial3D_x8fbi")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x8fbi"]
 
+[sub_resource type="SphereMesh" id="SphereMesh_41u45"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="Animation" id="Animation_41u45"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ktgx5"]
+resource_name = "blow_up_more"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles3D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hgol0"]
+_data = {
+&"RESET": SubResource("Animation_41u45"),
+&"blow_up_more": SubResource("Animation_ktgx5")
+}
+
 [node name="Ball" type="RigidBody3D" unique_id=1398797421]
+collision_layer = 2
+collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_cbx31")
+script = ExtResource("1_x8fbi")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1846888962]
 mesh = SubResource("SphereMesh_cbx31")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1221884346]
 shape = SubResource("SphereShape3D_x8fbi")
+
+[node name="GPUParticles3D" type="CPUParticles3D" parent="." unique_id=1561653895]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 30
+visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
+mesh = SubResource("SphereMesh_41u45")
+spread = 180.0
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1654663918]
+libraries/ = SubResource("AnimationLibrary_hgol0")

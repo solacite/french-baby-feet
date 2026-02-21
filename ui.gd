@@ -11,7 +11,7 @@ func player_score(player_num: int):
 	
 	if player_num == 1:
 		p1score += 1
-		p_1_score = p1score
+		p_1_score.text = str(p1score)
 	else:
 		p2score += 1
-		p_2_score = p2score
+		p_2_score.text = str(p2score)
