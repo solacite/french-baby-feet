@@ -18,6 +18,7 @@ sky_material = SubResource("PanoramaSkyMaterial_qhgo8")
 background_mode = 2
 sky = SubResource("Sky_ejafs")
 tonemap_mode = 2
+sdfgi_use_occlusion = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qhgo8"]
 size = Vector3(20.281616, 1, 27.090302)
@@ -57,6 +58,10 @@ transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment" unique_id=426577651]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082092285, -0.92234945, -9.6401825)
+shape = SubResource("BoxShape3D_qhgo8")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="Environment" unique_id=385009439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082092285, 5.31698, -9.6401825)
 shape = SubResource("BoxShape3D_qhgo8")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment" unique_id=1741710931]
@@ -204,7 +209,7 @@ player_num = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.9202805)
 
 [node name="bars3" parent="P2/Backline" unique_id=1354962369 instance=ExtResource("6_ejafs")]
-transform = Transform3D(-2.1855695e-07, 0, 5, -5.9604645e-07, 5.000001, 0, -5.000001, -5.9604645e-07, -2.1855695e-07, -0.19543457, -0.011341453, 0.4688387)
+transform = Transform3D(-2.1855695e-07, 0, 5, -5.9604645e-07, 5.000001, 0, -5.000001, -5.9604645e-07, -2.1855695e-07, -0.19543457, -0.011341453, -0.031161308)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="P2/Backline" unique_id=537680303]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.45, 0)
@@ -289,17 +294,10 @@ shape = SubResource("BoxShape3D_mibtd")
 [node name="Cameras" type="Node3D" parent="." unique_id=790252724]
 transform = Transform3D(0.9635418, 0, -0.2675579, 0, 1, 0, 0.2675579, 0, 0.9635418, -2.885169, 4.0641575, -2.921947)
 
-[node name="CameraPivot" type="Node3D" parent="Cameras" unique_id=1909390862]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
-
-[node name="CameraPivotCamera" type="Camera3D" parent="Cameras/CameraPivot" unique_id=825117622]
-transform = Transform3D(-0.074104905, 0.6235819, -0.7782378, 0, 0.7803835, 0.6253012, 0.99725044, 0.046337884, -0.057830248, -13.935639, 10.437468, -0.22549248)
-
 [node name="FollowPoint" type="Node3D" parent="Cameras" unique_id=1839034933]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 0, -20)
 
 [node name="FollowBallCam" type="Camera3D" parent="Cameras/FollowPoint" unique_id=1684330770]
-transform = Transform3D(0.008244291, 0.75455546, -0.65618455, 0.06712224, 0.6543092, 0.7532424, 0.9977107, -0.050254524, -0.045253098, -18.64967, 13.272663, 11.2247505)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, -5)
 current = true
 
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=1031884943]

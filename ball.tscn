@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bbswd1qjburcp"]
 
-[ext_resource type="Script" path="res://ball.gd" id="1_x8fbi"]
+[ext_resource type="Script" uid="uid://drh7jhgp2t1sb" path="res://ball.gd" id="1_x8fbi"]
+[ext_resource type="Shader" uid="uid://cttp54gn8888y" path="res://ball.gdshader" id="2_41u45"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbx31"]
 friction = 0.0
@@ -8,13 +9,21 @@ bounce = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8fbi"]
 albedo_color = Color(1, 1, 1, 0)
+emission_enabled = true
+emission = Color(0.70980394, 0, 0, 1)
+emission_energy_multiplier = 2.92
 
 [sub_resource type="SphereMesh" id="SphereMesh_cbx31"]
 material = SubResource("StandardMaterial3D_x8fbi")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x8fbi"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ktgx5"]
+render_priority = 0
+shader = ExtResource("2_41u45")
+
 [sub_resource type="SphereMesh" id="SphereMesh_41u45"]
+material = SubResource("ShaderMaterial_ktgx5")
 radius = 0.25
 height = 0.5
 
