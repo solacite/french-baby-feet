@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dipjv5euo7owr"]
+
+[ext_resource type="PackedScene" uid="uid://cn8dbtjqe531g" path="res://assets/blurb.blend" id="1_4t1a8"]
+[ext_resource type="Script" uid="uid://cukp3lsmymn0v" path="res://assets/blurb.gd" id="2_dsyc0"]
+
+[node name="blurb" unique_id=1945343213 instance=ExtResource("1_4t1a8")]
+script = ExtResource("2_dsyc0")
+
+[node name="Cube" parent="." index="0" unique_id=155124252]
+transform = Transform3D(0.41875294, 0, 0, 0, -0.41875294, 3.6608544e-08, 0, -3.6608544e-08, -0.41875294, 0, -2.2245235, 0)

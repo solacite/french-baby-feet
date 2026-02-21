@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b4rk10w6bnu7d"]
+
+[ext_resource type="PackedScene" uid="uid://d0ou0io5wgbqv" path="res://assets/babyfeetfrench.blend" id="1_8qh1k"]
+[ext_resource type="LightmapGIData" uid="uid://dousd5dqkuirs" path="res://assets/babyfeetfrench.lmbake" id="2_2m61n"]
+
+[node name="babyfeetfrench" unique_id=281917187 instance=ExtResource("1_8qh1k")]
+
+[node name="LightmapGI" type="LightmapGI" parent="." index="7" unique_id=295597166]
+
+[node name="LightmapGI2" type="LightmapGI" parent="." index="8" unique_id=779949017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1433051, 0)
+light_data = ExtResource("2_2m61n")

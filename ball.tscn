@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bbswd1qjburcp"]
 
-[ext_resource type="Script" uid="uid://drh7jhgp2t1sb" path="res://ball.gd" id="1_x8fbi"]
+[ext_resource type="Script" path="res://ball.gd" id="1_x8fbi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbx31"]
 friction = 0.0
+bounce = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8fbi"]
 albedo_color = Color(1, 1, 1, 0)

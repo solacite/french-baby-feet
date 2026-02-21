@@ -1,15 +1,13 @@
 extends Node3D
 
 @export var backwards = 1
-@export var rotate_speed = 20
-@export var move_speed = 15
+@export var rotate_speed = 30
+@export var move_speed = 20
 @export var player_num = 1
 
 
 @onready var backline: Node3D = $Backline
 @onready var frontline: Node3D = $Frontline
-@onready var back_light: SpotLight3D = $BackLight
-@onready var front_light: SpotLight3D = $FrontLight
 
 var rotate_string = "0"
 var moving_string = "1"
@@ -40,10 +38,8 @@ func _physics_process(delta: float) -> void:
 		
 		if Input.is_action_pressed(rotate_string):
 			current_side = "left"
-			back_light.light_energy = 7.5
 		else:
 			current_side = "right"
-			back_light.light_energy = 0
 		
 		# rotating
 	
@@ -62,10 +58,8 @@ func _physics_process(delta: float) -> void:
 		var moving = 0
 		if Input.is_action_pressed(moving_string):
 			moving = 1
-			front_light.light_energy = 7.5
 		else:
 			moving = -1
-			front_light.light_energy = 0
 		
 		var temp_move = clamp(backline.position.x + moving * delta * move_speed * backwards, -1, 1)
 		
