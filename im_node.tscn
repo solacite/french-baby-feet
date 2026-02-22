@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://by7tpgdttejju" path="res://main_script.gd" id="1_m7ivn"]
 [ext_resource type="Texture2D" uid="uid://ce8wchpe2j8xn" path="res://assets/day.png" id="2_qhgo8"]
 [ext_resource type="Script" uid="uid://b615ui4l6o13g" path="res://p_1.gd" id="2_qhmma"]
-[ext_resource type="PackedScene" path="res://assets/babyfeetfrench.tscn" id="3_jv6xn"]
+[ext_resource type="PackedScene" uid="uid://b4rk10w6bnu7d" path="res://assets/babyfeetfrench.tscn" id="3_jv6xn"]
 [ext_resource type="LightmapGIData" uid="uid://bn1nlxxoky1yd" path="res://assets/im_node.lmbake" id="5_qhgo8"]
 [ext_resource type="PackedScene" uid="uid://i0kb0d5npnva" path="res://assets/bars.blend" id="6_ejafs"]
 [ext_resource type="PackedScene" uid="uid://dipjv5euo7owr" path="res://assets/blurb.tscn" id="7_5ocm5"]
@@ -37,6 +37,8 @@ height = 12.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_mibtd"]
 size = Vector3(15, 10, 1)
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ovx0"]
+
 [node name="Main" type="Node3D" unique_id=18269128 groups=["Main"]]
 script = ExtResource("1_m7ivn")
 cam_rotate_speed = 0.1
@@ -59,6 +61,7 @@ transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment" unique_id=426577651]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082092285, -0.92234945, -9.6401825)
 shape = SubResource("BoxShape3D_qhgo8")
+disabled = true
 
 [node name="CollisionShape3D18" type="CollisionShape3D" parent="Environment" unique_id=385009439]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082092285, 5.31698, -9.6401825)
@@ -303,9 +306,10 @@ shape = SubResource("BoxShape3D_mibtd")
 transform = Transform3D(0.9635418, 0, -0.2675579, 0, 1, 0, 0.2675579, 0, 0.9635418, -2.885169, 4.0641575, -2.921947)
 
 [node name="FollowPoint" type="Node3D" parent="Cameras" unique_id=1839034933]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3, 0, -7)
 
 [node name="FollowBallCam" type="Camera3D" parent="Cameras/FollowPoint" unique_id=1684330770]
-transform = Transform3D(0.12496808, 0.5553044, -0.8222044, 0, 0.8287007, 0.559692, 0.99216086, -0.069943614, 0.10356112, -20.996355, 16.595993, -3.5651639)
+transform = Transform3D(0.04830788, 0.8689474, -0.4925412, 0, 0.49311697, 0.86996317, 0.99883246, -0.042026073, 0.023821421, -5.7206717, 11.4717, 1.0882521)
 current = true
 
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=1031884943]
@@ -313,5 +317,14 @@ quality = 2
 texel_scale = 0.05
 light_data = ExtResource("5_qhgo8")
 
+[node name="OutOfBounds" type="Area3D" parent="." unique_id=988214930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.950797, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutOfBounds" unique_id=997866846]
+shape = SubResource("WorldBoundaryShape3D_2ovx0")
+
 [connection signal="body_entered" from="P1Goal" to="." method="_on_p_1_goal_body_entered"]
 [connection signal="body_entered" from="P2Goal" to="." method="_on_p_2_goal_body_entered"]
+[connection signal="body_entered" from="OutOfBounds" to="." method="_on_out_of_bounds_body_entered"]

@@ -64,6 +64,7 @@ func goal(body: Node3D, player_num: int):
 	body.blow_up()
 	spawn_ball()
 	cam_direction *= -1
+	UI.player_score(player_num)
 
 	if randi_range(0, 3) == 0:  # one in 4 chance
 		super_fast_mode = true
@@ -77,3 +78,10 @@ func _on_p_1_goal_body_entered(body: Node3D) -> void:
 
 func _on_p_2_goal_body_entered(body: Node3D) -> void:
 	goal(body, 2)
+
+
+func _on_out_of_bounds_body_entered(body: Node3D) -> void:
+	body.blow_up()
+	spawn_ball()
+	cam_direction *= -1
+	
