@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbswd1qjburcp"]
 
-[ext_resource type="Script" uid="uid://drh7jhgp2t1sb" path="res://ball.gd" id="1_x8fbi"]
-[ext_resource type="Shader" uid="uid://cttp54gn8888y" path="res://ball.gdshader" id="2_41u45"]
+[ext_resource type="Script" uid="uid://drh7jhgp2t1sb" path="res://scripts/ball.gd" id="1_x8fbi"]
+[ext_resource type="Shader" uid="uid://cttp54gn8888y" path="res://misc/ball.gdshader" id="2_41u45"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbx31"]
 friction = 0.0

@@ -16,7 +16,7 @@ var super_fast_mode = false:
 		super_fast_mode = new
 		Engine.time_scale = 2.5 if super_fast_mode else 1.0
 
-const BALL = preload("res://ball.tscn")
+const BALL = preload("res://scenes/ball.tscn")
 
 
 func spawn_ball():
