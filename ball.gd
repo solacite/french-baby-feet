@@ -10,6 +10,6 @@ func blow_up():
 
 
 func _physics_process(_delta: float) -> void:
-	# if we have a low speed, apply a random impulse only on x/y (not z)
-	if linear_velocity.length() < 0.1:
-		apply_impulse(Vector3(randf_range(-10, 10), randf_range(-10, 10), 0))
+	# if we have a low speed, apply a random impulse only on x/z (not y)
+	if linear_velocity.length() < 0.5:
+		apply_impulse(Vector3(randf_range(-10, 10), 0, randf_range(-10, 10)))

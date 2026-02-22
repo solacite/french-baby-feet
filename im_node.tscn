@@ -3,15 +3,15 @@
 [ext_resource type="Script" uid="uid://by7tpgdttejju" path="res://main_script.gd" id="1_m7ivn"]
 [ext_resource type="Texture2D" uid="uid://ce8wchpe2j8xn" path="res://assets/day.png" id="2_qhgo8"]
 [ext_resource type="Script" uid="uid://b615ui4l6o13g" path="res://p_1.gd" id="2_qhmma"]
-[ext_resource type="PackedScene" uid="uid://b4rk10w6bnu7d" path="res://assets/babyfeetfrench.tscn" id="3_jv6xn"]
+[ext_resource type="PackedScene" path="res://assets/babyfeetfrench.tscn" id="3_jv6xn"]
 [ext_resource type="LightmapGIData" uid="uid://bn1nlxxoky1yd" path="res://assets/im_node.lmbake" id="5_qhgo8"]
 [ext_resource type="PackedScene" uid="uid://i0kb0d5npnva" path="res://assets/bars.blend" id="6_ejafs"]
 [ext_resource type="PackedScene" uid="uid://dipjv5euo7owr" path="res://assets/blurb.tscn" id="7_5ocm5"]
-[ext_resource type="SphereMesh" uid="uid://c1aj0ubh2pw04" path="res://basicInitialLight.tres" id="8_5ocm5"]
+[ext_resource type="PackedScene" uid="uid://cfe8ns0qa0rb7" path="res://assets/lightbulb.tscn" id="8_5ocm5"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qhgo8"]
 panorama = ExtResource("2_qhgo8")
-energy_multiplier = 0.2
+energy_multiplier = 0.0
 
 [sub_resource type="Sky" id="Sky_ejafs"]
 sky_material = SubResource("PanoramaSkyMaterial_qhgo8")
@@ -44,68 +44,57 @@ length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Cameras/demoCam:rotation:x")
+tracks/0/path = NodePath("Cameras/pivot/demoCam:rotation:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-0.6798823, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(1.5707964, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0.0009999999)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Cameras/demoCam:rotation:y")
+tracks/1/path = NodePath("Cameras/pivot/demoCam:rotation:z")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1.3660585, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0.0009999999)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Cameras/demoCam:rotation:z")
+tracks/2/path = NodePath("Cameras/pivot/demoCam:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0.0009999999)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Cameras/demoCam:position:x")
+tracks/3/path = NodePath("Cameras/pivot/demoCam:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(7.128125, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(25.791515, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0.0009999999)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Cameras/demoCam:position:y")
+tracks/4/path = NodePath("Cameras/pivot/demoCam:rotation:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(9.161917, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Cameras/demoCam:position:z")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-9.276656, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0.0009999999)
 }
 
 [sub_resource type="Animation" id="Animation_0favs"]
@@ -113,67 +102,56 @@ resource_name = "start_camera"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Cameras/demoCam:position:x")
+tracks/0/path = NodePath("Cameras/pivot/demoCam:rotation:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(15.681316, -0.25, 0, 0.25, 0, 7.128125, -0.16666667, 1.4255319, 0, 0),
+"points": PackedFloat32Array(1.5707964, -0.0005, 0, 0.0005, 0, 1.2668823, -0.16666667, 0.050652348, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Cameras/demoCam:position:y")
+tracks/1/path = NodePath("Cameras/pivot/demoCam:rotation:z")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(12.960899, -0.25, 0, 0.25, 0, 9.161917, -0.16666667, 0.6331638, 0, 0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0, -9.898532e-08, -0.16666667, 1.6497554e-08, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Cameras/demoCam:position:z")
+tracks/2/path = NodePath("Cameras/pivot/demoCam:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-0.7603831, -0.25, 0, 0.25, 0, -9.276656, -0.16666667, 1.419379, 0, 0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0, 9.626095, -0.16666667, -1.6043491, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Cameras/demoCam:rotation:x")
+tracks/3/path = NodePath("Cameras/pivot/demoCam:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-0.6798823, -0.25, 0, 0.25, 0, -1.0987608, -0.16666667, 0.069813095, 0, 0),
+"points": PackedFloat32Array(25.791515, -0.0005, 0, 0.0005, 0, 19.446625, -0.16666667, 1.0574818, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Cameras/demoCam:rotation:y")
+tracks/4/path = NodePath("Cameras/pivot/demoCam:rotation:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(1.3660585, -0.25, 0, 0.25, 0, 1.7936603, -0.16666667, -0.07126697, 0, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Cameras/demoCam:rotation:z")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0, -1.1549543, -0.16666667, 0.1924924, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 
@@ -184,36 +162,6 @@ _data = {
 }
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ovx0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0favs"]
-emission_enabled = true
-emission = Color(0, 1, 0, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_drxsp"]
-material = SubResource("StandardMaterial3D_0favs")
-radius = 2.5
-height = 5.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w62h3"]
-emission_enabled = true
-emission = Color(0, 1, 0, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_5qnb7"]
-material = SubResource("StandardMaterial3D_w62h3")
-radius = 2.5
-height = 5.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6yso"]
-emission_enabled = true
-emission = Color(0, 1, 0, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_cljgw"]
-material = SubResource("StandardMaterial3D_t6yso")
-radius = 2.5
-height = 5.0
 
 [sub_resource type="Animation" id="Animation_mibtd"]
 length = 0.001
@@ -236,12 +184,13 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 
 [sub_resource type="Animation" id="Animation_b6tap"]
 resource_name = "fly_away"
+length = 1.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -250,7 +199,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -34, -0.16666667, 5.666667, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -68, -0.16666667, 5.666667, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/1/type = "bezier"
@@ -261,7 +210,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 1, -0.16666667, -0.16666667, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.16666667, -0.16666667, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/2/type = "method"
@@ -278,6 +227,20 @@ tracks/2/keys = {
 "method": &"spawn_ball"
 }]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("InitialLights")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.3666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8v63d"]
 _data = {
@@ -287,7 +250,6 @@ _data = {
 
 [node name="Main" type="Node3D" unique_id=18269128 groups=["Main"]]
 script = ExtResource("1_m7ivn")
-cam_rotate_speed = 0.1
 ball_impulse = 2.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1619762853]
@@ -548,22 +510,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.52134514)
 shape = SubResource("BoxShape3D_mibtd")
 
 [node name="Cameras" type="Node3D" parent="." unique_id=790252724]
-transform = Transform3D(0.9635418, 0, -0.2675579, 0, 1, 0, 0.2675579, 0, 0.9635418, -2.885169, 4.0641575, -2.921947)
 
 [node name="CameraAnimate" type="AnimationPlayer" parent="Cameras" unique_id=1995327074]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_drxsp")
 
-[node name="FollowPoint" type="Node3D" parent="Cameras" unique_id=1839034933]
-transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 2.7324424, 0, -7.963541)
+[node name="pivot" type="Node3D" parent="Cameras" unique_id=1017155902]
 
-[node name="FollowBallCam" type="Camera3D" parent="Cameras/FollowPoint" unique_id=1684330770]
-transform = Transform3D(0.52278537, 0.5996651, -0.60588545, 0, 0.7107458, 0.7034489, 0.8524643, -0.36775264, 0.37156737, -12.395727, 15.952978, 3.6690497)
-
-[node name="demoCam" type="Camera3D" parent="Cameras" unique_id=297324120]
-transform = Transform3D(0.2033105, -0.61557055, 0.761405, 0, 0.77764666, 0.6287015, -0.9791143, -0.12782161, 0.15810375, 7.128125, 9.161917, -9.276656)
+[node name="demoCam" type="Camera3D" parent="Cameras/pivot" unique_id=297324120]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 25.791515, -9.623343)
 current = true
-fov = 115.6
 
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=1031884943]
 quality = 2
@@ -580,25 +536,21 @@ shape = SubResource("WorldBoundaryShape3D_2ovx0")
 
 [node name="InitialLights" type="Node3D" parent="." unique_id=2058070681]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InitialLights" unique_id=1177877245]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.024973, 10, 0)
-mesh = ExtResource("8_5ocm5")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="InitialLights" unique_id=228195103]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 10, -7)
-mesh = SubResource("SphereMesh_drxsp")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="InitialLights" unique_id=56887141]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 10, -14)
-mesh = SubResource("SphereMesh_5qnb7")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="InitialLights" unique_id=1449447401]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 10, -21)
-mesh = SubResource("SphereMesh_cljgw")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="InitialLights" unique_id=2027981116]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_8v63d")
+
+[node name="lightbulb2" parent="InitialLights" unique_id=1561183392 instance=ExtResource("8_5ocm5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, 0)
+
+[node name="lightbulb3" parent="InitialLights" unique_id=161943476 instance=ExtResource("8_5ocm5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, -7.076668)
+
+[node name="lightbulb4" parent="InitialLights" unique_id=75137804 instance=ExtResource("8_5ocm5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, -13.658849)
+
+[node name="lightbulb8" parent="InitialLights" unique_id=613499160 instance=ExtResource("8_5ocm5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, -20.99123)
 
 [connection signal="body_entered" from="P1Goal" to="." method="_on_p_1_goal_body_entered"]
 [connection signal="body_entered" from="P2Goal" to="." method="_on_p_2_goal_body_entered"]

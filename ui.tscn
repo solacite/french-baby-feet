@@ -8,7 +8,7 @@ length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:self_modulate:a")
+tracks/0/path = NodePath("MarginContainer/Label:self_modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -33,7 +33,7 @@ resource_name = "start_game"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:self_modulate:a")
+tracks/0/path = NodePath("MarginContainer/Label:self_modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -84,9 +84,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="P1Score" type="Label" parent="Main/HBoxContainer" unique_id=1458414716]
+[node name="P2Score" type="Label" parent="Main/HBoxContainer" unique_id=1389530676]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(0, 0.73333335, 0.32156864, 1)
+theme_override_font_sizes/font_size = 256
 text = "0"
 
 [node name="VSeparator" type="VSeparator" parent="Main/HBoxContainer" unique_id=2037359944]
@@ -94,9 +95,10 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="P2Score" type="Label" parent="Main/HBoxContainer" unique_id=1389530676]
+[node name="P1Score" type="Label" parent="Main/HBoxContainer" unique_id=1458414716]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(0.8901961, 0.28235295, 0.13725491, 1)
+theme_override_font_sizes/font_size = 256
 text = "0"
 
 [node name="VSeparator2" type="VSeparator" parent="Main/HBoxContainer" unique_id=832358716]
@@ -105,17 +107,26 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="Label" type="Label" parent="." unique_id=1252191723]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2001020816]
+libraries/ = SubResource("AnimationLibrary_nltto")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=35022886]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -219.5
+offset_top = -245.0
+offset_right = 219.5
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 200
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1252191723]
+layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Turn on all switches to start!"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2001020816]
-libraries/ = SubResource("AnimationLibrary_nltto")

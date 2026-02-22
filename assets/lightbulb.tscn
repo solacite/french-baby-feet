@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cfe8ns0qa0rb7"]
+
+[ext_resource type="PackedScene" uid="uid://x657qb75rqgm" path="res://assets/lightbulb.blend" id="1_fp7i8"]
+[ext_resource type="Script" uid="uid://f6wi61x36vfi" path="res://assets/lightbulb.gd" id="2_gysvs"]
+[ext_resource type="Material" uid="uid://c6b5ptocdpfbn" path="res://assets/blank.tres" id="3_hgu86"]
+
+[node name="lightbulb" unique_id=1561183392 instance=ExtResource("1_fp7i8")]
+script = ExtResource("2_gysvs")
+
+[node name="Sphere" parent="." index="1" unique_id=837571583]
+surface_material_override/0 = ExtResource("3_hgu86")
