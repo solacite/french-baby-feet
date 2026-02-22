@@ -38,7 +38,9 @@ func _physics_process(delta: float) -> void:
 			current_side = "right"
 
 		var target_rad = deg_to_rad(target_rotations_dict[current_side])
-		var new_rot = lerp_angle(backline.rotation.x, target_rad, rotate_speed * delta)
+		var new_rot = lerp_angle(backline.rotation.x, target_rad, min(rotate_speed * delta, 1.0))
+		if abs(angle_difference(new_rot, target_rad)) < 0.001:
+			new_rot = target_rad
 		backline.rotation.x = new_rot
 		frontline.rotation.x = new_rot
 		dumb_fix = 1

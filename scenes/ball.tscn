@@ -24,8 +24,8 @@ shader = ExtResource("2_41u45")
 
 [sub_resource type="SphereMesh" id="SphereMesh_41u45"]
 material = SubResource("ShaderMaterial_ktgx5")
-radius = 0.25
-height = 0.5
+radius = 0.125
+height = 0.25
 
 [sub_resource type="Animation" id="Animation_41u45"]
 length = 0.001
@@ -44,31 +44,31 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ktgx5"]
 resource_name = "blow_up_more"
-tracks/0/type = "method"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".")
+tracks/0/path = NodePath("GPUParticles3D:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.19999999),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
+"update": 1,
+"values": [true]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GPUParticles3D:emitting")
+tracks/1/path = NodePath("MeshInstance3D")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"values": [{
+"args": [],
+"method": &"hide"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hgol0"]
@@ -91,7 +91,7 @@ shape = SubResource("SphereShape3D_x8fbi")
 
 [node name="GPUParticles3D" type="CPUParticles3D" parent="." unique_id=1561653895]
 emitting = false
-amount = 20
+amount = 80
 one_shot = true
 explosiveness = 1.0
 fixed_fps = 30
@@ -103,3 +103,5 @@ initial_velocity_max = 20.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1654663918]
 libraries/ = SubResource("AnimationLibrary_hgol0")
+
+[connection signal="finished" from="GPUParticles3D" to="." method="_on_gpu_particles_3d_finished"]

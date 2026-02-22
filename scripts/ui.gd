@@ -1,7 +1,7 @@
 extends Control
 
-@onready var p_1_score: Label = $Main/HBoxContainer/P1Score
-@onready var p_2_score: Label = $Main/HBoxContainer/P2Score
+@onready var p_1_score: Label = $Main/MarginContainer/HBoxContainer/MarginContainer/P1Score
+@onready var p_2_score: Label = $Main/MarginContainer/HBoxContainer/MarginContainer2/P2Score
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 

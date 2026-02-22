@@ -604,16 +604,16 @@ shape = SubResource("WorldBoundaryShape3D_2ovx0")
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_8v63d")
 
-[node name="lightbulb8" parent="InitialLights" unique_id=613499160 instance=ExtResource("8_5ocm5")]
+[node name="lightbulb8" parent="InitialLights" unique_id=1561183392 instance=ExtResource("8_5ocm5")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, -20.99123)
 
-[node name="lightbulb4" parent="InitialLights" unique_id=75137804 instance=ExtResource("8_5ocm5")]
+[node name="lightbulb4" parent="InitialLights" unique_id=909865080 instance=ExtResource("8_5ocm5")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, -13.658849)
 
-[node name="lightbulb3" parent="InitialLights" unique_id=161943476 instance=ExtResource("8_5ocm5")]
+[node name="lightbulb3" parent="InitialLights" unique_id=2132298369 instance=ExtResource("8_5ocm5")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, -7.076668)
 
-[node name="lightbulb2" parent="InitialLights" unique_id=1561183392 instance=ExtResource("8_5ocm5")]
+[node name="lightbulb2" parent="InitialLights" unique_id=1328642371 instance=ExtResource("8_5ocm5")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, 0)
 
 [connection signal="body_entered" from="P1Goal" to="." method="_on_p_1_goal_body_entered"]

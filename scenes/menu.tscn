@@ -119,6 +119,7 @@ script = ExtResource("1_7jp70")
 layer = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="splash" unique_id=641097369]
+visible = false
 position = Vector2(576, 324)
 scale = Vector2(0.41860467, 0.3139535)
 sprite_frames = SubResource("SpriteFrames_lti8b")
