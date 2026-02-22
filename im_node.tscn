@@ -26,7 +26,7 @@ sdfgi_use_occlusion = true
 size = Vector3(20.281616, 1, 27.090302)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ejafs"]
-size = Vector3(1.1004333, 3.2666016, 4.7935333)
+size = Vector3(1.1004333, 4.853821, 4.7935333)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m7ivn"]
 radius = 1.0449219
@@ -264,7 +264,7 @@ environment = SubResource("Environment_m7ivn")
 collision_layer = 3
 
 [node name="babyfeetfrench" parent="Environment" unique_id=281917187 instance=ExtResource("3_jv6xn")]
-transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -0.008212566, -0.47606564, -9.695663)
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -0.0048308372, -0.47606468, -9.679396)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment" unique_id=426577651]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082092285, -0.92234945, -9.6401825)
@@ -279,7 +279,7 @@ transform = Transform3D(0.9132257, 0, -0.407454, 0, 1, 0, 0.407454, 0, 0.9132257
 shape = SubResource("BoxShape3D_ejafs")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment" unique_id=643225189]
-transform = Transform3D(0.9132257, 0, -0.407454, 0, 1, 0, 0.407454, 0, 0.9132257, 7.046727, 0.9436312, -8.379618)
+transform = Transform3D(0.9132257, 0, -0.407454, 0, 1, 0, 0.407454, 0, 0.9132257, 7.046727, 1.7372408, -8.379618)
 shape = SubResource("BoxShape3D_ejafs")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Environment" unique_id=649838173]
@@ -540,17 +540,17 @@ shape = SubResource("WorldBoundaryShape3D_2ovx0")
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_8v63d")
 
-[node name="lightbulb2" parent="InitialLights" unique_id=1561183392 instance=ExtResource("8_5ocm5")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, 0)
-
-[node name="lightbulb3" parent="InitialLights" unique_id=161943476 instance=ExtResource("8_5ocm5")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, -7.076668)
+[node name="lightbulb8" parent="InitialLights" unique_id=613499160 instance=ExtResource("8_5ocm5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, -20.99123)
 
 [node name="lightbulb4" parent="InitialLights" unique_id=75137804 instance=ExtResource("8_5ocm5")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, -13.658849)
 
-[node name="lightbulb8" parent="InitialLights" unique_id=613499160 instance=ExtResource("8_5ocm5")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, -20.99123)
+[node name="lightbulb3" parent="InitialLights" unique_id=161943476 instance=ExtResource("8_5ocm5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, -7.076668)
+
+[node name="lightbulb2" parent="InitialLights" unique_id=1561183392 instance=ExtResource("8_5ocm5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, 0)
 
 [connection signal="body_entered" from="P1Goal" to="." method="_on_p_1_goal_body_entered"]
 [connection signal="body_entered" from="P2Goal" to="." method="_on_p_2_goal_body_entered"]
