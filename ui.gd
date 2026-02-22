@@ -3,6 +3,8 @@ extends Control
 @onready var p_1_score: Label = $Main/HBoxContainer/P1Score
 @onready var p_2_score: Label = $Main/HBoxContainer/P2Score
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 var p1score = 0
 var p2score = 0

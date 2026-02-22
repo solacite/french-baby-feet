@@ -5,6 +5,8 @@ extends Node3D
 @onready var cameras: Node3D = $Cameras
 @onready var follow_ball_cam: Camera3D = $Cameras/FollowPoint/FollowBallCam
 @onready var follow_point = $Cameras/FollowPoint
+@onready var initial_lights: Node3D = $InitialLights
+@onready var camera_animate: AnimationPlayer = $Cameras/CameraAnimate
 
 @export var cam_rotate_speed = 0.5
 @export var ball_impulse = 0.5
@@ -26,11 +28,6 @@ var super_fast_mode = false:
 
 var current_ball: Node3D = null
 const BALL = preload("res://ball.tscn")
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	spawn_ball()
 
 
 func spawn_ball():
@@ -57,6 +54,10 @@ func _input(_event: InputEvent) -> void:
 	if not started:
 		for i in range(4):
 			if Input.is_action_just_pressed(str(i)):
+				
+				if not pressed_button[i]:
+					initial_lights.get_child(i).mesh.material.emission_energy_multiplier = 1.0
+				
 				pressed_button[i] = true
 		
 		# checks if all buttons have been pressed
@@ -67,16 +68,19 @@ func _input(_event: InputEvent) -> void:
 		
 		# doing the main thing herehehrheheherHERE
 		if ready_yet:
-			spawn_ball()
 			started = true
+			# animates the lights downward
+			initial_lights.get_child(4).play("fly_away")
+			UI.animation_player.play("start_game") # changes the UI
+			camera_animate.play("start_camera")
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 	
-	if not started:
-		follow_point.rotation.x += cam_rotate_speed * delta * cam_direction
+	#if not started:
+		#follow_point.rotation.x += cam_rotate_speed * delta * cam_direction
 
 
 func goal(body: Node3D, player_num: int):
