@@ -9,7 +9,7 @@ var p1score = 0
 var p2score = 0
 var game_over = false
 
-const WIN_SCORE = 1
+const WIN_SCORE = 3
 
 
 func player_score(player_num: int):

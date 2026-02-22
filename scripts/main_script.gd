@@ -71,11 +71,13 @@ func _input(event: InputEvent) -> void:
 				pressed_button[i] = true
 				var bulb = initial_lights.get_child(i + 1)
 				bulb.on = true
+				$CLICK.play()
 		if pressed_button.all(func(b): return b):
 			started = true
 			initial_lights.get_child(0).play("fly_away")
 			UI.animation_player.play("start_game")
 			camera_animate.play("start_camera")
+			$MUSIC.play()
 
 
 func camera_spin_and_spawn():
@@ -97,6 +99,15 @@ func camera_spin_and_spawn():
 
 
 func goal(body: Node3D, player_num: int):
+	var anim_name: String
+	if player_num == 1:
+		anim_name = "blue_goal"
+	else:
+		anim_name = "red_goal"
+
+	$CanvasLayer/GOALIDK.play(anim_name)
+
+	$GOAL.play()
 	body.blow_up()
 	UI.player_score(player_num)
 	if UI.game_over:
@@ -117,17 +128,23 @@ func _on_p_2_goal_body_entered(body: Node3D) -> void:
 
 
 func _on_out_of_bounds_body_entered(body: Node3D) -> void:
+	$BOO.play()
 	body.queue_free()
 	spawn_ball()
 
 
 func blow_up_non_winning_player():
 	var winner_color: Color = Color("3aa0fc")
+	var player_name_human_readable : String
 	if winning_player == 2:
 		winner_color = Color("e34823")
-		var player_name_human_readable = "blue"
+		player_name_human_readable = "blue"
 		if winning_player == 2:
 			player_name_human_readable = "red"
+	
+	else:
+		p1.blow_up()
+	
 	$Control/Label.text = "Player %d \n Wins!!" % winning_player
 	$blurb.set_color(winner_color)
 	var stylebox = StyleBoxFlat.new()

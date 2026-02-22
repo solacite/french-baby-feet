@@ -4,6 +4,10 @@ extends RigidBody3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
+	contact_monitor = true
+	max_contacts_reported = 4
+	body_entered.connect(_on_body_entered)
+
 	var gradient := Gradient.new()
 	var hue := randf()
 	gradient.set_color(0, Color.from_hsv(hue, 0.8, 1.0))
@@ -18,6 +22,9 @@ func _physics_process(_delta: float) -> void:
 	# if we have a low speed, apply a random impulse only on x/z (not y)
 	if linear_velocity.length() < 0.5:
 		apply_impulse(Vector3(randf_range(-10, 10), 0, randf_range(-10, 10)))
+
+func _on_body_entered(body: Node) -> void:
+	print("Ball hit: ", body.name)
 
 func _on_gpu_particles_3d_finished() -> void:
 	self.queue_free()
