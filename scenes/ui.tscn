@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cquq6pa7acn78"]
 
 [ext_resource type="Script" uid="uid://blqtljwahyrms" path="res://scripts/ui.gd" id="1_x4jx1"]
+[ext_resource type="PackedScene" uid="uid://drtd1b6ce3j3p" path="res://scenes/menu.tscn" id="2_gdt2y"]
 [ext_resource type="PackedScene" uid="uid://cm8ibso66x2ge" path="res://scenes/im_node.tscn" id="2_yev5y"]
 
 [sub_resource type="Animation" id="Animation_m6e0p"]
@@ -67,6 +68,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x4jx1")
+
+[node name="menu" parent="." unique_id=2145172662 instance=ExtResource("2_gdt2y")]
+layout_mode = 1
 
 [node name="Main" parent="." unique_id=18269128 instance=ExtResource("2_yev5y")]
 

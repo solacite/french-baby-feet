@@ -4,6 +4,7 @@ extends Node3D
 @onready var initial_lights: Node3D = $InitialLights
 @onready var camera_animate: AnimationPlayer = $Cameras/CameraAnimate
 @onready var pivot: Node3D = $Cameras
+@onready var menu = $"../menu"
 
 @export var ball_impulse = 0.5
 
@@ -14,7 +15,7 @@ var pressed_button = [false, false, false, false]
 var super_fast_mode = false:
 	set(new):
 		super_fast_mode = new
-		Engine.time_scale = 2.5 if super_fast_mode else 1.0
+		Engine.time_scale = 1.5 if super_fast_mode else 1.0
 
 const BALL = preload("res://scenes/ball.tscn")
 
@@ -34,7 +35,7 @@ func spawn_ball():
 
 
 func _process(delta: float) -> void:
-	if started and current_ball and is_instance_valid(current_ball):
+	if started and current_ball and is_instance_valid(current_ball) and menu.is_pause:
 		pivot.position.z = lerp(pivot.position.z, current_ball.position.z + 12, 5.0 * delta)
 
 

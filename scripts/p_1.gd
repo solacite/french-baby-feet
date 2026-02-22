@@ -14,7 +14,7 @@ var moving_string = "1"
 
 var current_side = "right" # can be "left"
 var target_rotations_dict = {
-	"right": -67,
+	"right": -67, #67777777777!!!!!
 	"left": 67,
 }
 
