@@ -3,7 +3,7 @@ extends Node3D
 @onready var UI = get_parent()
 @onready var initial_lights: Node3D = $InitialLights
 @onready var camera_animate: AnimationPlayer = $Cameras/CameraAnimate
-@onready var pivot: Node3D = $Cameras
+@onready var pivot: Node3D = $Cameras/pivot
 @onready var menu = $"../menu"
 
 @export var ball_impulse = 0.5
@@ -35,7 +35,7 @@ func spawn_ball():
 
 
 func _process(delta: float) -> void:
-	if started and current_ball and is_instance_valid(current_ball) and menu.is_pause:
+	if started and menu.is_pause == false and pivot and current_ball:
 		pivot.position.z = lerp(pivot.position.z, current_ball.position.z + 12, 5.0 * delta)
 
 
@@ -61,6 +61,7 @@ func _input(event: InputEvent) -> void:
 
 
 func camera_spin_and_spawn():
+	pivot.position.z = -10
 	var tween = create_tween()
 	(
 		tween
@@ -75,7 +76,6 @@ func camera_spin_and_spawn():
 func goal(body: Node3D, player_num: int):
 	body.blow_up()
 	UI.player_score(player_num)
-	super_fast_mode = randi_range(0, 3) == 0
 	camera_spin_and_spawn()
 
 

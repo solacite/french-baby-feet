@@ -131,6 +131,5 @@ theme_override_constants/margin_bottom = 200
 [node name="Label" type="Label" parent="MarginContainer" unique_id=1252191723]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Turn on all switches to start!"
 horizontal_alignment = 1
 vertical_alignment = 1

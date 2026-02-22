@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://by7tpgdttejju" path="res://scripts/main_script.gd" id="1_m7ivn"]
 [ext_resource type="Texture2D" uid="uid://ce8wchpe2j8xn" path="res://assets/day.png" id="2_qhgo8"]
 [ext_resource type="Script" uid="uid://b615ui4l6o13g" path="res://scripts/p_1.gd" id="2_qhmma"]
-[ext_resource type="PackedScene" uid="uid://b4rk10w6bnu7d" path="res://assets/babyfeetfrench.tscn" id="3_jv6xn"]
+[ext_resource type="PackedScene" path="res://assets/babyfeetfrench.tscn" id="3_jv6xn"]
 [ext_resource type="LightmapGIData" uid="uid://bn1nlxxoky1yd" path="res://assets/im_node.lmbake" id="5_qhgo8"]
 [ext_resource type="PackedScene" uid="uid://i0kb0d5npnva" path="res://assets/bars.blend" id="6_ejafs"]
 [ext_resource type="PackedScene" uid="uid://dipjv5euo7owr" path="res://assets/blurb.tscn" id="7_5ocm5"]
-[ext_resource type="PackedScene" path="res://assets/lightbulb.tscn" id="8_5ocm5"]
+[ext_resource type="PackedScene" uid="uid://cfe8ns0qa0rb7" path="res://assets/lightbulb.tscn" id="8_5ocm5"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qhgo8"]
 panorama = ExtResource("2_qhgo8")
