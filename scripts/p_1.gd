@@ -5,6 +5,7 @@ extends Node3D
 @export var move_speed = 20
 @export var player_num = 1
 
+var dead = false
 
 @onready var backline: Node3D = $Backline
 @onready var frontline: Node3D = $Frontline
@@ -12,14 +13,15 @@ extends Node3D
 var rotate_string = "0"
 var moving_string = "1"
 
-var current_side = "right" # can be "left"
+var current_side = "right"  # can be "left"
 var target_rotations_dict = {
-	"right": -67, #67777777777!!!!!
+	"right": -67,  #67777777777!!!!!
 	"left": 67,
 }
 
-	# AnimatableStaticBodies can't move and rotate on the same frame, so alternate each frame
+# AnimatableStaticBodies can't move and rotate on the same frame, so alternate each frame
 var dumb_fix = 0
+
 
 func _ready() -> void:
 	if player_num == 2:
@@ -30,7 +32,32 @@ func _ready() -> void:
 			"left": -67,
 		}
 
+
+func blow_up():
+	dead = true
+	var particles = CPUParticles3D.new()
+	particles.amount = 200
+	particles.explosiveness = 1.0
+	particles.one_shot = true
+	particles.gravity = Vector3(0, -10, 0)
+	particles.initial_velocity_min = 10.0
+	particles.initial_velocity_max = 20.0
+	particles.spread = 180.0
+	if player_num == 1:
+		particles.color = Color(0, 0.73, 0.32)
+	else:
+		particles.color = Color(0.89, 0.28, 0.14)
+	add_child(particles)
+	particles.emitting = true
+	backline.visible = false
+	frontline.visible = false
+	particles.finished.connect(queue_free)
+	await particles.finished
+
+
 func _physics_process(delta: float) -> void:
+	if dead:
+		return
 	if dumb_fix == 0:
 		if Input.is_action_pressed(rotate_string):
 			current_side = "left"
