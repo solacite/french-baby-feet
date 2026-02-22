@@ -4,11 +4,14 @@ extends Node3D
 
 @onready var cameras: Node3D = $Cameras
 @onready var follow_ball_cam: Camera3D = $Cameras/FollowPoint/FollowBallCam
-@onready var camera_pivot = $Cameras/FollowPoint
+@onready var follow_point = $Cameras/FollowPoint
 
 @export var cam_rotate_speed = 0.5
 @export var ball_impulse = 0.5
 var player_score: int = 0
+
+var started = false
+var pressed_button = [false, false, false, false] # player needs to hit all light switches to start the game
 
 var cam_direction = 1
 # note that at Camera angle at 0 and 180 degrees the players basically reverse
@@ -49,15 +52,31 @@ func spawn_ball():
 		)
 	)
 
+func _input(_event: InputEvent) -> void:
+	
+	if not started:
+		for i in range(4):
+			if Input.is_action_just_pressed(str(i)):
+				pressed_button[i] = true
+		
+		# checks if all buttons have been pressed
+		var ready_yet = true
+		for i in range(4):
+			if not pressed_button[i]:
+				ready_yet = false
+		
+		# doing the main thing herehehrheheherHERE
+		if ready_yet:
+			spawn_ball()
+			started = true
 
-func _process(_delta: float) -> void:
+
+func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
-
-
-#func _input(_event: InputEvent) -> void:
-
-#if Input.is_action_just_pressed()
+	
+	if not started:
+		follow_point.rotation.x += cam_rotate_speed * delta * cam_direction
 
 
 func goal(body: Node3D, player_num: int):
