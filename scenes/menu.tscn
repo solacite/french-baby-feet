@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://drtd1b6ce3j3p"]
+
+[ext_resource type="Script" uid="uid://bskjp7oh678d6" path="res://scripts/menu.gd" id="1_7jp70"]
+[ext_resource type="Texture2D" uid="uid://be6clanjfovtw" path="res://assets/main menu/Untitled_Artwork-1.png" id="2_oxnod"]
+[ext_resource type="Texture2D" uid="uid://dgsmfdrl118u3" path="res://assets/main menu/Untitled_Artwork-2.png" id="3_gd0jp"]
+[ext_resource type="Texture2D" uid="uid://cy6mw0xw8nhr4" path="res://assets/main menu/Untitled_Artwork-3.png" id="4_4ndjb"]
+[ext_resource type="Texture2D" uid="uid://dgjsghb2sqwtl" path="res://assets/main menu/Untitled_Artwork-4.png" id="5_3ls4m"]
+[ext_resource type="Texture2D" uid="uid://kkgt5q2loode" path="res://assets/main menu/Untitled_Artwork-5.png" id="6_5h80m"]
+[ext_resource type="Texture2D" uid="uid://c3tlmg1tkrh8e" path="res://assets/main menu/Untitled_Artwork-6.png" id="7_w25hu"]
+[ext_resource type="Texture2D" uid="uid://dd6y2o1w4jdco" path="res://assets/main menu/Untitled_Artwork-7.png" id="8_td6mg"]
+[ext_resource type="Texture2D" uid="uid://pxtx81rmb3w5" path="res://assets/main menu/Untitled_Artwork-8.png" id="9_guify"]
+[ext_resource type="Texture2D" uid="uid://kcv0mlyriq65" path="res://assets/main menu/Untitled_Artwork-9.png" id="10_oil5j"]
+[ext_resource type="Texture2D" uid="uid://b2wjbdy3n6xws" path="res://assets/main menu/Untitled_Artwork-10.png" id="11_8uog0"]
+[ext_resource type="Texture2D" uid="uid://bjbne0i1moe3m" path="res://assets/main menu/Untitled_Artwork-11.png" id="12_k5x1w"]
+[ext_resource type="Texture2D" uid="uid://bima8htxqxh2n" path="res://assets/main menu/Untitled_Artwork-12.png" id="13_rkpqm"]
+[ext_resource type="Texture2D" uid="uid://c5hf76eqyapij" path="res://assets/main menu/Untitled_Artwork-13.png" id="14_7wriu"]
+[ext_resource type="Shader" uid="uid://dcq774dfmwp0i" path="res://misc/pause.gdshader" id="15_7jp70"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lti8b"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("2_oxnod")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_gd0jp")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_4ndjb")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_3ls4m")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_5h80m")
+}, {
+"duration": 0.5,
+"texture": ExtResource("7_w25hu")
+}, {
+"duration": 0.5,
+"texture": ExtResource("8_td6mg")
+}, {
+"duration": 0.5,
+"texture": ExtResource("9_guify")
+}, {
+"duration": 0.5,
+"texture": ExtResource("10_oil5j")
+}, {
+"duration": 0.5,
+"texture": ExtResource("11_8uog0")
+}, {
+"duration": 0.7,
+"texture": ExtResource("12_k5x1w")
+}, {
+"duration": 0.8,
+"texture": ExtResource("13_rkpqm")
+}, {
+"duration": 0.9,
+"texture": ExtResource("14_7wriu")
+}, {
+"duration": 0.7,
+"texture": ExtResource("14_7wriu")
+}, {
+"duration": 0.8,
+"texture": ExtResource("13_rkpqm")
+}, {
+"duration": 0.7,
+"texture": ExtResource("12_k5x1w")
+}, {
+"duration": 0.5,
+"texture": ExtResource("11_8uog0")
+}, {
+"duration": 0.5,
+"texture": ExtResource("10_oil5j")
+}, {
+"duration": 0.5,
+"texture": ExtResource("9_guify")
+}, {
+"duration": 0.5,
+"texture": ExtResource("8_td6mg")
+}, {
+"duration": 0.5,
+"texture": ExtResource("7_w25hu")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_5h80m")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_3ls4m")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_4ndjb")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_gd0jp")
+}, {
+"duration": 0.5,
+"texture": ExtResource("2_oxnod")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mae5d"]
+shader = ExtResource("15_7jp70")
+
+[node name="menu" type="Control" unique_id=2145172662]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_7jp70")
+
+[node name="splash" type="CanvasLayer" parent="." unique_id=1799899339]
+layer = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="splash" unique_id=641097369]
+position = Vector2(576, 324)
+scale = Vector2(0.41860467, 0.3139535)
+sprite_frames = SubResource("SpriteFrames_lti8b")
+autoplay = "default"
+frame_progress = 0.82892054
+
+[node name="ColorRect" type="ColorRect" parent="splash" unique_id=253233449]
+visible = false
+offset_right = 1163.0
+offset_bottom = 662.0
+color = Color(0, 0, 1, 1)
+
+[node name="Button" type="Button" parent="splash" unique_id=763494718]
+offset_left = 557.0
+offset_top = 148.0
+offset_right = 1124.0
+offset_bottom = 494.0
+flat = true
+
+[node name="instrucions" type="CanvasLayer" parent="." unique_id=974608283]
+layer = 2
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="instrucions" unique_id=1520709538]
+offset_right = 1163.0
+offset_bottom = 662.0
+
+[node name="pause" type="CanvasLayer" parent="." unique_id=984928082]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="pause" unique_id=589306298]
+material = SubResource("ShaderMaterial_mae5d")
+offset_right = 1163.0
+offset_bottom = 662.0
+
+[node name="Label" type="Label" parent="pause" unique_id=860535149]
+offset_left = 518.0
+offset_top = 180.0
+offset_right = 634.0
+offset_bottom = 235.00002
+theme_override_font_sizes/font_size = 40
+text = "Pause"
+
+[connection signal="pressed" from="splash/Button" to="." method="_on_button_pressed"]

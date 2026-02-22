@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://cquq6pa7acn78"]
+
+[ext_resource type="Script" uid="uid://blqtljwahyrms" path="res://scripts/ui.gd" id="1_x4jx1"]
+[ext_resource type="PackedScene" uid="uid://drtd1b6ce3j3p" path="res://scenes/menu.tscn" id="2_gdt2y"]
+[ext_resource type="PackedScene" uid="uid://cm8ibso66x2ge" path="res://scenes/im_node.tscn" id="2_yev5y"]
+
+[sub_resource type="Animation" id="Animation_m6e0p"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Label:self_modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main/HBoxContainer:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_27fn8"]
+resource_name = "start_game"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Label:self_modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.16666667, 0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main/HBoxContainer:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.16666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nltto"]
+_data = {
+&"RESET": SubResource("Animation_m6e0p"),
+&"start_game": SubResource("Animation_27fn8")
+}
+
+[node name="UI" type="Control" unique_id=1848782866 groups=["UI"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x4jx1")
+
+[node name="menu" parent="." unique_id=2145172662 instance=ExtResource("2_gdt2y")]
+layout_mode = 1
+
+[node name="Main" parent="." unique_id=18269128 instance=ExtResource("2_yev5y")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main" unique_id=895772333]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 88.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VSeparator3" type="VSeparator" parent="Main/HBoxContainer" unique_id=488341721]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="P2Score" type="Label" parent="Main/HBoxContainer" unique_id=1389530676]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.73333335, 0.32156864, 1)
+theme_override_font_sizes/font_size = 256
+text = "0"
+
+[node name="VSeparator" type="VSeparator" parent="Main/HBoxContainer" unique_id=2037359944]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="P1Score" type="Label" parent="Main/HBoxContainer" unique_id=1458414716]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8901961, 0.28235295, 0.13725491, 1)
+theme_override_font_sizes/font_size = 256
+text = "0"
+
+[node name="VSeparator2" type="VSeparator" parent="Main/HBoxContainer" unique_id=832358716]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2001020816]
+libraries/ = SubResource("AnimationLibrary_nltto")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=35022886]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -219.5
+offset_top = -245.0
+offset_right = 219.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 200
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1252191723]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Turn on all switches to start!"
+horizontal_alignment = 1
+vertical_alignment = 1

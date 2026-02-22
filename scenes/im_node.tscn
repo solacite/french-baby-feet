@@ -1,0 +1,621 @@
+[gd_scene format=3 uid="uid://cm8ibso66x2ge"]
+
+[ext_resource type="Script" uid="uid://by7tpgdttejju" path="res://scripts/main_script.gd" id="1_m7ivn"]
+[ext_resource type="Texture2D" uid="uid://ce8wchpe2j8xn" path="res://assets/day.png" id="2_qhgo8"]
+[ext_resource type="Script" uid="uid://b615ui4l6o13g" path="res://scripts/p_1.gd" id="2_qhmma"]
+[ext_resource type="PackedScene" uid="uid://b4rk10w6bnu7d" path="res://assets/babyfeetfrench.tscn" id="3_jv6xn"]
+[ext_resource type="LightmapGIData" uid="uid://bn1nlxxoky1yd" path="res://assets/im_node.lmbake" id="5_qhgo8"]
+[ext_resource type="PackedScene" uid="uid://i0kb0d5npnva" path="res://assets/bars.blend" id="6_ejafs"]
+[ext_resource type="PackedScene" uid="uid://dipjv5euo7owr" path="res://assets/blurb.tscn" id="7_5ocm5"]
+[ext_resource type="PackedScene" path="res://assets/lightbulb.tscn" id="8_5ocm5"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qhgo8"]
+panorama = ExtResource("2_qhgo8")
+energy_multiplier = 0.0
+
+[sub_resource type="Sky" id="Sky_ejafs"]
+sky_material = SubResource("PanoramaSkyMaterial_qhgo8")
+
+[sub_resource type="Environment" id="Environment_m7ivn"]
+background_mode = 2
+sky = SubResource("Sky_ejafs")
+tonemap_mode = 2
+sdfgi_use_occlusion = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qhgo8"]
+size = Vector3(20.281616, 1, 27.090302)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ejafs"]
+size = Vector3(1.1004333, 4.853821, 4.7935333)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m7ivn"]
+radius = 1.0449219
+height = 4.5266724
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qhmma"]
+radius = 0.2
+height = 12.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mibtd"]
+size = Vector3(15, 10, 1)
+
+[sub_resource type="Animation" id="Animation_5ocm5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cameras/pivot/demoCam:rotation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(1.5707964, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0.0009999999)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cameras/pivot/demoCam:rotation:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0.0009999999)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cameras/pivot/demoCam:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0.0009999999)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cameras/pivot/demoCam:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(25.791515, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0.0009999999)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cameras/pivot/demoCam:rotation:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0.0009999999)
+}
+
+[sub_resource type="Animation" id="Animation_0favs"]
+resource_name = "start_camera"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cameras/pivot/demoCam:rotation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1.5707964, -0.0005, 0, 0.0005, 0, 1.2668823, -0.16666667, 0.050652348, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cameras/pivot/demoCam:rotation:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0, -9.898532e-08, -0.16666667, 1.6497554e-08, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cameras/pivot/demoCam:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0, 9.626095, -0.16666667, -1.6043491, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cameras/pivot/demoCam:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(25.791515, -0.0005, 0, 0.0005, 0, 19.446625, -0.16666667, 1.0574818, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cameras/pivot/demoCam:rotation:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0, -1.1549543, -0.16666667, 0.1924924, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_drxsp"]
+_data = {
+&"RESET": SubResource("Animation_5ocm5"),
+&"start_camera": SubResource("Animation_0favs")
+}
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2ovx0"]
+
+[sub_resource type="Animation" id="Animation_mibtd"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InitialLights:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:sky:sky_material:energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_b6tap"]
+resource_name = "fly_away"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InitialLights:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -68, -0.16666667, 5.666667, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:sky:sky_material:energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.16666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_ball"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("InitialLights")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.3666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8v63d"]
+_data = {
+&"RESET": SubResource("Animation_mibtd"),
+&"fly_away": SubResource("Animation_b6tap")
+}
+
+[node name="Main" type="Node3D" unique_id=18269128 groups=["Main"]]
+script = ExtResource("1_m7ivn")
+ball_impulse = 2.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1619762853]
+transform = Transform3D(0.8665601, 0.43228853, -0.24939968, 0.12143294, 0.30207393, 0.94551855, 0.484074, -0.849634, 0.20927113, 0, 90.47625, 0)
+shadow_enabled = true
+shadow_blur = 2.824
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1893751305]
+environment = SubResource("Environment_m7ivn")
+
+[node name="Environment" type="StaticBody3D" parent="." unique_id=1549108890]
+collision_layer = 3
+
+[node name="babyfeetfrench" parent="Environment" unique_id=281917187 instance=ExtResource("3_jv6xn")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -0.0048308372, -0.47606468, -9.679396)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment" unique_id=426577651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082092285, -0.92234945, -9.6401825)
+shape = SubResource("BoxShape3D_qhgo8")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="Environment" unique_id=385009439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082092285, 5.31698, -9.6401825)
+shape = SubResource("BoxShape3D_qhgo8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment" unique_id=1741710931]
+transform = Transform3D(0.9132257, 0, -0.407454, 0, 1, 0, 0.407454, 0, 0.9132257, 7.1074038, 0.94363785, -16.132038)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment" unique_id=643225189]
+transform = Transform3D(0.9132257, 0, -0.407454, 0, 1, 0, 0.407454, 0, 0.9132257, 7.046727, 1.7372408, -8.379618)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Environment" unique_id=649838173]
+transform = Transform3D(0.92186993, 0, 0.3874995, 0, 1, 0, -0.3874995, 0, 0.92186993, 7.153838, 0.94363785, -3.4363985)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Environment" unique_id=1586139543]
+transform = Transform3D(0.92186993, 0, 0.3874995, 0, 1, 0, -0.3874995, 0, 0.92186993, 7.032487, 0.94363785, -10.991249)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Environment" unique_id=700036273]
+transform = Transform3D(0.9592104, 0, 0.28269306, 0, 1, 0, -0.28269306, 0, 0.9592104, 6.865067, 0.94363785, -19.449709)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Environment" unique_id=214177896]
+transform = Transform3D(0.04089904, 0, 0.99916345, 0, 1, 0, -0.99916345, 0, 0.04089904, 4.197318, 0.94363785, -22.721897)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Environment" unique_id=96488655]
+transform = Transform3D(0.04089904, 0, 0.99916345, 0, 1, 0, -0.99916345, 0, 0.04089904, 6.0887837, 0.94363785, 3.4115047)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Environment" unique_id=1703059028]
+transform = Transform3D(0.95677805, 0, -0.29081908, 0, 1, 0, 0.29081908, 0, 0.95677805, 6.7827163, 0.94363785, 0.41366667)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="Environment" unique_id=1443994263]
+transform = Transform3D(-0.90616024, 0, 0.4229346, 0, 1, 0, -0.4229346, 0, -0.90616024, -7.6616306, 0.94363785, -3.2842336)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="Environment" unique_id=1892237163]
+transform = Transform3D(-0.90616024, 0, 0.4229346, 0, 1, 0, -0.4229346, 0, -0.90616024, -7.4690466, 0.9436312, -11.034499)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="Environment" unique_id=1078027139]
+transform = Transform3D(-0.92833024, 0, -0.37175673, 0, 1, 0, 0.37175673, 0, -0.92833024, -7.4920278, 0.94363785, -15.978825)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="Environment" unique_id=714486146]
+transform = Transform3D(-0.92833024, 0, -0.37175673, 0, 1, 0, 0.37175673, 0, -0.92833024, -7.4992485, 0.94363785, -8.423003)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="Environment" unique_id=431756003]
+transform = Transform3D(-0.96388197, 0, -0.26633006, 0, 1, 0, 0.26633006, 0, -0.96388197, -7.475783, 0.94363785, 0.037080765)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="Environment" unique_id=602134105]
+transform = Transform3D(-0.05789502, 0, -0.99832284, 0, 1, 0, 0.99832284, 0, -0.05789502, -5.5804644, 0.94363785, 3.3126464)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="Environment" unique_id=1592424967]
+transform = Transform3D(-0.05789502, 0, -0.99832284, 0, 1, 0, 0.99832284, 0, -0.05789502, -6.310602, 0.94363785, -22.807613)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="Environment" unique_id=2127428673]
+transform = Transform3D(-0.951691, 0, 0.30705765, 0, 1, 0, -0.30705765, 0, -0.951691, -7.0554466, 0.94363785, -19.822018)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="Environment" unique_id=1956089170]
+transform = Transform3D(0.9132257, 0, -0.407454, 0, 1, 0, 0.407454, 0, 0.9132257, 7.1074038, 3.186791, -16.132038)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="Environment" unique_id=123889231]
+transform = Transform3D(0.9132257, 0, -0.407454, 0, 1, 0, 0.407454, 0, 0.9132257, 7.046727, 3.1867843, -8.379618)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="Environment" unique_id=305091227]
+transform = Transform3D(0.92186993, 0, 0.3874995, 0, 1, 0, -0.3874995, 0, 0.92186993, 7.153838, 3.186791, -3.4363985)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="Environment" unique_id=943692787]
+transform = Transform3D(0.92186993, 0, 0.3874995, 0, 1, 0, -0.3874995, 0, 0.92186993, 7.032487, 3.186791, -10.991249)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="Environment" unique_id=2089939921]
+transform = Transform3D(0.9592104, 0, 0.28269306, 0, 1, 0, -0.28269306, 0, 0.9592104, 6.865067, 3.186791, -19.449709)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="Environment" unique_id=513561309]
+transform = Transform3D(0.04089904, 0, 0.99916345, 0, 1, 0, -0.99916345, 0, 0.04089904, 4.197318, 3.186791, -22.721897)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="Environment" unique_id=10993609]
+transform = Transform3D(0.04089904, 0, 0.99916345, 0, 1, 0, -0.99916345, 0, 0.04089904, 6.0887837, 3.186791, 3.4115047)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D26" type="CollisionShape3D" parent="Environment" unique_id=978888198]
+transform = Transform3D(0.95677805, 0, -0.29081908, 0, 1, 0, 0.29081908, 0, 0.95677805, 6.7827163, 3.186791, 0.41366667)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D27" type="CollisionShape3D" parent="Environment" unique_id=1549231645]
+transform = Transform3D(-0.90616024, 0, 0.4229346, 0, 1, 0, -0.4229346, 0, -0.90616024, -7.6616306, 3.186791, -3.2842336)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D28" type="CollisionShape3D" parent="Environment" unique_id=1256939998]
+transform = Transform3D(-0.90616024, 0, 0.4229346, 0, 1, 0, -0.4229346, 0, -0.90616024, -7.4690466, 3.1867843, -11.034499)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D29" type="CollisionShape3D" parent="Environment" unique_id=304027031]
+transform = Transform3D(-0.92833024, 0, -0.37175673, 0, 1, 0, 0.37175673, 0, -0.92833024, -7.4920278, 3.186791, -15.978825)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D30" type="CollisionShape3D" parent="Environment" unique_id=1117821321]
+transform = Transform3D(-0.92833024, 0, -0.37175673, 0, 1, 0, 0.37175673, 0, -0.92833024, -7.4992485, 3.186791, -8.423003)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D31" type="CollisionShape3D" parent="Environment" unique_id=758201464]
+transform = Transform3D(-0.96388197, 0, -0.26633006, 0, 1, 0, 0.26633006, 0, -0.96388197, -7.475783, 3.186791, 0.037080765)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D32" type="CollisionShape3D" parent="Environment" unique_id=1228799576]
+transform = Transform3D(-0.05789502, 0, -0.99832284, 0, 1, 0, 0.99832284, 0, -0.05789502, -5.5804644, 3.186791, 3.3126464)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D33" type="CollisionShape3D" parent="Environment" unique_id=65021962]
+transform = Transform3D(-0.05789502, 0, -0.99832284, 0, 1, 0, 0.99832284, 0, -0.05789502, -6.310602, 3.186791, -22.807613)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="CollisionShape3D34" type="CollisionShape3D" parent="Environment" unique_id=1438218693]
+transform = Transform3D(-0.951691, 0, 0.30705765, 0, 1, 0, -0.30705765, 0, -0.951691, -7.0554466, 3.186791, -19.822018)
+shape = SubResource("BoxShape3D_ejafs")
+
+[node name="P1" type="Node3D" parent="." unique_id=1006135382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -7)
+script = ExtResource("2_qhmma")
+
+[node name="Backline" type="AnimatableBody3D" parent="P1" unique_id=873844556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.119261)
+
+[node name="bars" parent="P1/Backline" unique_id=1821045634 instance=ExtResource("6_ejafs")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 4.6162195, 1.9210747, 2.0178133e-07, -1.9210747, 4.6162195, -8.397281e-08, -0.19543457, -0.014707327, -0.0061637163)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="P1/Backline" unique_id=94048992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="P1/Backline" unique_id=1992424663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.50746465, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="P1/Backline" unique_id=593765390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.45000005, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="P1/Backline" unique_id=816040071]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, -0.02245903)
+shape = SubResource("CapsuleShape3D_qhmma")
+
+[node name="blurb6" parent="P1/Backline" unique_id=1945343213 instance=ExtResource("7_5ocm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9973264, -0.023752213)
+color = Color(0, 0.7315194, 0.32188153, 1)
+
+[node name="blurb7" parent="P1/Backline" unique_id=540725779 instance=ExtResource("7_5ocm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03207, 2.9973264, -0.023752213)
+color = Color(0, 0.7315194, 0.32188153, 1)
+
+[node name="blurb8" parent="P1/Backline" unique_id=1294008562 instance=ExtResource("7_5ocm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9378014, 2.9973264, -0.023752213)
+color = Color(0, 0.7315194, 0.32188153, 1)
+
+[node name="Frontline" type="AnimatableBody3D" parent="P1" unique_id=674383622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.421811)
+
+[node name="bars2" parent="P1/Frontline" unique_id=1556748177 instance=ExtResource("6_ejafs")]
+transform = Transform3D(-2.1855695e-07, 0, 5, -5.9604645e-07, 5.000001, 0, -5.000001, -5.9604645e-07, -2.1855695e-07, -0.19543457, -0.011341453, 0.014428139)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="P1/Frontline" unique_id=1347255549]
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="P1/Frontline" unique_id=1373538049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="P1/Frontline" unique_id=2107402527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0942874, -0.5382569, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="P1/Frontline" unique_id=910222882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0942874, -0.45000005, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="P1/Frontline" unique_id=1869313603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.45000005, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="P1/Frontline" unique_id=1893038553]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, -0.02245903)
+shape = SubResource("CapsuleShape3D_qhmma")
+
+[node name="blurb6" parent="P1/Frontline" unique_id=302081515 instance=ExtResource("7_5ocm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9973264, -0.023752213)
+color = Color(0, 0.7315194, 0.32188153, 1)
+
+[node name="blurb7" parent="P1/Frontline" unique_id=1692422998 instance=ExtResource("7_5ocm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03207, 2.9973264, -0.023752213)
+color = Color(0, 0.7315194, 0.32188153, 1)
+
+[node name="blurb8" parent="P1/Frontline" unique_id=1556909850 instance=ExtResource("7_5ocm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9378014, 2.9973264, -0.023752213)
+color = Color(0, 0.7315194, 0.32188153, 1)
+
+[node name="P2" type="Node3D" parent="." unique_id=1683102542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -13.022459)
+script = ExtResource("2_qhmma")
+backwards = -1
+player_num = 2
+
+[node name="Backline" type="AnimatableBody3D" parent="P2" unique_id=1352546399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.9202805)
+
+[node name="bars3" parent="P2/Backline" unique_id=1354962369 instance=ExtResource("6_ejafs")]
+transform = Transform3D(-2.1855695e-07, 0, 5, -5.9604645e-07, 5.000001, 0, -5.000001, -5.9604645e-07, -2.1855695e-07, -0.19543457, -0.011341453, -0.031161308)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="P2/Backline" unique_id=537680303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.64946294, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="P2/Backline" unique_id=1767650960]
+transform = Transform3D(0.9999953, -0.002549594, -0.0016939673, 0.0025589967, 0.9999812, 0.0055647236, 0.0016797294, -0.0055690375, 0.9999831, 0, -0.45000005, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="P2/Backline" unique_id=928815147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.45000005, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="P2/Backline" unique_id=363552817]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_qhmma")
+
+[node name="blurb6" parent="P2/Backline" unique_id=651813971 instance=ExtResource("7_5ocm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9973264, -0.023752213)
+color = Color(0.8919274, 0.28165793, 0.13652909, 1)
+
+[node name="blurb7" parent="P2/Backline" unique_id=696325128 instance=ExtResource("7_5ocm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03207, 2.9973264, -0.023752213)
+color = Color(0.8919274, 0.28165793, 0.13652909, 1)
+
+[node name="blurb8" parent="P2/Backline" unique_id=1122332725 instance=ExtResource("7_5ocm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9378014, 2.9973264, -0.023752213)
+color = Color(0.8919274, 0.28165793, 0.13652909, 1)
+
+[node name="Frontline" type="AnimatableBody3D" parent="P2" unique_id=320216106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.7213)
+
+[node name="bars4" parent="P2/Frontline" unique_id=808241033 instance=ExtResource("6_ejafs")]
+transform = Transform3D(-2.1855695e-07, 0, 5, -5.9604645e-07, 5.000001, 0, -5.000001, -5.9604645e-07, -2.1855695e-07, -0.19543457, -0.011341453, 0.012590408)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="P2/Frontline" unique_id=1056805752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.43242192, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="P2/Frontline" unique_id=1397997768]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.54686284, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="P2/Frontline" unique_id=1041214515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.45000005, 0)
+shape = SubResource("CapsuleShape3D_m7ivn")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="P2/Frontline" unique_id=41645382]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.009055376, 8.583069e-06, -0.0046863556)
+shape = SubResource("CapsuleShape3D_qhmma")
+
+[node name="blurb6" parent="P2/Frontline" unique_id=69014605 instance=ExtResource("7_5ocm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9973264, -0.023752213)
+color = Color(0.8919274, 0.28165793, 0.13652909, 1)
+
+[node name="blurb7" parent="P2/Frontline" unique_id=2134133239 instance=ExtResource("7_5ocm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03207, 2.9973264, -0.023752213)
+color = Color(0.8919274, 0.28165793, 0.13652909, 1)
+
+[node name="blurb8" parent="P2/Frontline" unique_id=1282553063 instance=ExtResource("7_5ocm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9378014, 2.9973264, -0.023752213)
+color = Color(0.8919274, 0.28165793, 0.13652909, 1)
+
+[node name="P1Goal" type="Area3D" parent="." unique_id=544395576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="P1Goal" unique_id=144169127]
+transform = Transform3D(0.99999994, 4.6092555e-05, -0.0003684961, -4.5543307e-05, 0.99999887, 0.0015083051, 0.0003685644, -0.0015082883, 0.9999988, 0, 0, 0.02666092)
+shape = SubResource("BoxShape3D_mibtd")
+
+[node name="P2Goal" type="Area3D" parent="." unique_id=1724940426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24.5)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="P2Goal" unique_id=1377108957]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.52134514)
+shape = SubResource("BoxShape3D_mibtd")
+
+[node name="Cameras" type="Node3D" parent="." unique_id=790252724]
+
+[node name="CameraAnimate" type="AnimationPlayer" parent="Cameras" unique_id=1995327074]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_drxsp")
+
+[node name="pivot" type="Node3D" parent="Cameras" unique_id=1017155902]
+
+[node name="demoCam" type="Camera3D" parent="Cameras/pivot" unique_id=297324120]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 25.791515, -9.623343)
+current = true
+
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=1031884943]
+quality = 2
+texel_scale = 0.05
+light_data = ExtResource("5_qhgo8")
+
+[node name="OutOfBounds" type="Area3D" parent="." unique_id=988214930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.108877, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutOfBounds" unique_id=997866846]
+shape = SubResource("WorldBoundaryShape3D_2ovx0")
+
+[node name="InitialLights" type="Node3D" parent="." unique_id=2058070681]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InitialLights" unique_id=2027981116]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_8v63d")
+
+[node name="lightbulb8" parent="InitialLights" unique_id=613499160 instance=ExtResource("8_5ocm5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, -20.99123)
+
+[node name="lightbulb4" parent="InitialLights" unique_id=75137804 instance=ExtResource("8_5ocm5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, -13.658849)
+
+[node name="lightbulb3" parent="InitialLights" unique_id=161943476 instance=ExtResource("8_5ocm5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, -7.076668)
+
+[node name="lightbulb2" parent="InitialLights" unique_id=1561183392 instance=ExtResource("8_5ocm5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.139109, 22.95205, 0)
+
+[connection signal="body_entered" from="P1Goal" to="." method="_on_p_1_goal_body_entered"]
+[connection signal="body_entered" from="P2Goal" to="." method="_on_p_2_goal_body_entered"]
+[connection signal="body_entered" from="OutOfBounds" to="." method="_on_out_of_bounds_body_entered"]
